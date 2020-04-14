@@ -60,7 +60,7 @@ DB_HOST         (host)
 DB_USER         (usuario do banco)
 DB_PASS         (senha do banco)
 DB_NAME         (nome do banco)
-DEV_DB_STORAGE  (necessário apenas para quando DB_CONNECTION for 'sqlite')
+DB_STORAGE      (necessário apenas para quando DB_CONNECTION for 'sqlite')
 
 # Opcionais
 AUTH_SECRET   (combinação de encriptacao das senhas jwt)
