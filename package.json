@@ -1,0 +1,55 @@
+{
+  "name": "vuttr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sucrase ./src -d ./dist --transforms imports",
+    "start": "node ./dist/server.js",
+    "dev": "nodemon src/server.js",
+    "dev:debug": "nodemon --inspect src/server.js",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate",
+    "seed": "npx sequelize-cli db:seed:undo:all && npx sequelize-cli db:seed:all",
+    "test": "cross-env NODE_ENV=test jest --force-exit --detectOpenHandles --testTimeout=10000",
+    "pretest": "cross-env NODE_ENV=test npm run migrate:reset && cross-env NODE_ENV=test npm run seed",
+    "doc-server": "aglio -i api.apib --theme-full-width --no-theme-condense -s",
+    "doc-generate": "aglio -i api.apib --theme-full-width --no-theme-condense -o public/api.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@sucrase/jest-plugin": "^2.0.0",
+    "cross-env": "^7.0.2",
+    "jest": "^25.3.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^2.0.4",
+    "sequelize-cli": "^5.5.1",
+    "sucrase": "^3.13.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.7",
+    "mysql2": "^2.1.0",
+    "pg": "^8.0.2",
+    "sequelize": "^5.21.6",
+    "sqlite3": "^4.1.1",
+    "youch": "^2.0.10",
+    "yup": "^0.28.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "verbose": true,
+    "transform": {
+      ".(js|jsx|ts|tsx)": "@sucrase/jest-plugin"
+    }
+  }
+}

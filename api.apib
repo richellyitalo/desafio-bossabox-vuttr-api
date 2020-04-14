@@ -1,0 +1,147 @@
+FORMAT: 1A
+HOST: http://vuttr-richellyitalo.heroku.com/
+
+# VUTTR (Very Useful Tools to Remember) API - by Richelly Italo
+
+Api to management tools
+
+# Group API
+
+## About [/]
+
+Api to management tools
+
+# Group User
+
+## Users [/users]
+
+### Create user [POST]
+
++ Request Create a new user
+    + Headers
+
+            Accept: application/json
+            Content-Type: application/json
+
+    + Attributes (object)
+        + email: foo@bar.com (string, required) - E-mail
+        + password: 123456 (string, required) - Password (min 3 digits)
+
+
++ Response 201 (application/json)
+
+    + Attributes (object)
+        + id (number)
+        + email: foo@bar.com (string)
+
+## Authenticate [/users/login]
+### Authenticate [POST]
+
+Get a new access token
+
++ Request Get a new access token
+    + Headers
+
+            Accept: application/json
+            Content-Type: application/json
+
+    + Attributes (object)
+        + email: foo@bar.com (string, required) - Email
+        + password: 123456 (string, required) - Password
+
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI[...] (string) - Access Token (jwt)
+        + user (object)
+            + id (number)
+            + email: foo@bar.com (string)
+
+
+# Group Tool
+
+## Tool [/tools]
+
+## Create a tool [POST]
+
++ Request Create a new tool
+    + Headers
+
+            Accept: application/json
+            Content-Type: application/json
+            Authorization: Bearer {TOKEN}
+
+
+    + Attributes (object)
+        + title: ReactJs (string, required)
+        + email: dev@dev.com (string, required) - E-mail format
+        + link: https://dev.com (string, required) - URL format
+        + description (string, required)
+        + tags: javascript, frontend, facebook (array[string], required)
+
+
++ Response 201 (application/json)
+
+    + Attributes (object)
+        + id (number)
+        + title: ReactJs (string)
+        + email: dev@dev.com (string) - E-mail format
+        + link: https://dev.com (string) - URL format
+        + description (string)
+        + tags: javascript, frontend, facebook (array[string])
+
+
+# List tools [/tools{?tag}]
+
+## List tools [GET]
+
++ Parameters
+    + tag (optional, string) - String to return only tools with this tag
+
++ Request List all tools
+    + Headers
+
+            Accept: application/json
+            Content-Type: application/json
+            Authorization: Bearer {TOKEN}
+
+
++ Response 201 (application/json)
+
+    + Attributes (array[object])
+
+
+    + Body
+
+            [
+              {
+                "id": 1,
+                "title": "Angular",
+                "description": "Doc Angular",
+                "link": "https://github.com/google/anbgularjs",
+                "tags": [
+                  "javascript",
+                  "framework",
+                  "node"
+                ]
+              }
+            ]
+
+# Delete a tool [/tools/{id}]
+
+## Delete a tool  [DELETE]
+
++ Parameters
+    + id (number, required) - Id of the tool that will be deleted
+
++ Request Delete a tool
+    + Headers
+
+            Accept: application/json
+            Content-Type: application/json
+            Authorization: Bearer {TOKEN}
+
+
++ Response 204 (application/json)
+
