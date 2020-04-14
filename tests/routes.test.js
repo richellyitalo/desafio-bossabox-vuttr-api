@@ -2,7 +2,6 @@
 // const app = require('../src/server');
 import request from 'supertest';
 import app from '../src/app';
-import { set } from 'mongoose';
 
 let token;
 const email = 'foo@bar.com';

@@ -2,6 +2,7 @@ node_modules/
 tmp/uploads/*
 .env
 package-lock.json
+yarn.lock
 *.sqlite
 dist/
 .vscode/

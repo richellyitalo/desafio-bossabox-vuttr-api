@@ -1,9 +1,22 @@
+# VUTTR (Very Useful Tools to Remember) - by [@richellyitalo](https://twitter.com/richellyitalo)
+
+API de gerenciamento de ferramentas. Desenvolvido para o primeiro desafio na BossaBox.
+Utilizei as seguites ferramentas:
+
+* Express.js (Framework)
+* Sequelize (ORM)
+* JWT (Autenticação)
+
+A aplicação é executada dentro do ambiente node.
+
+Espero realmente que gostem.
+
 # Configuração
 
-## 1 - Execute a instalação dos pacotes
+## 1 - Instalação de pacotes
 `npm install`
 
-## 2 - Configurações
+## 2 - Variáveis de ambiente
 É necessário copiar as informações contidas no arquivo `.env.example` para um novo arquivo `.env` e alterar as configurações necessárias ou defini-las no ambiente. Como por exemplo `NODE_ENV` (production|development).
 
 No arquivo `.env` há prefixos (DEV_, TEST_) relacionados às configurações de banco de dados para cada ambiente.
@@ -20,7 +33,7 @@ DEV_DB_STORAGE      (necessário apenas para quando DB_CONNECTION for 'sqlite')
 ```
 
 
-## 3 - Migration da aplicação
+## 3 - Migrations
 Para criar a estrutura inicial de banco de dados é necessário executar o script.
 
 `npm run migrate`
