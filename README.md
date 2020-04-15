@@ -6,6 +6,8 @@ Utilizei as seguites ferramentas:
 * Express.js (Framework)
 * Sequelize (ORM)
 * JWT (Autenticação)
+* API Blueprint (Documentação)
+* Jest (Testes)
 
 A aplicação é executada dentro do ambiente node.
 
@@ -50,7 +52,7 @@ O comando de testes já está configurado para executar consigo as migrations e 
 ```
 TEST_DB_CONNECTION (tipo de conexão) [mysql|postgres|sqlite]
 TEST_DB_HOST        (host)
-TEST_DB_USER        (usuario do banco)
+TEST_DB_USER        (usuário do banco)
 TEST_DB_PASS        (senha do banco)
 TEST_DB_NAME        (nome do banco)
 TEST_DB_STORAGE     (necessário apenas para quando DB_CONNECTION for 'sqlite')
@@ -70,13 +72,13 @@ Para publicação é necessário definir as variáveis de ambiente.
 NODE_ENV        (ambiente) [production|development]
 DB_CONNECTION   (tipo de conexão) [mysql|postgres|sqlite]
 DB_HOST         (host)
-DB_USER         (usuario do banco)
+DB_USER         (usuário do banco)
 DB_PASS         (senha do banco)
 DB_NAME         (nome do banco)
 DB_STORAGE      (necessário apenas para quando DB_CONNECTION for 'sqlite')
 
 # Opcionais
-AUTH_SECRET   (combinação de encriptacao das senhas jwt)
+AUTH_SECRET     (combinação de encriptação das senhas jwt)
 ```
 
 ## 2 - Arquivo Procfile
@@ -95,4 +97,9 @@ Para informações mais detalhadas de como publicar no Heroku, acesse [https://d
 
 ## BONUS
 
-A documentação da api se encontra no arquivo `api.html` (o source em api.apib).
+A documentação da api se encontra no arquivo `api.html` ou através do link da na página inicial da api quando em funcionamento (o source em api.apib).
+
+
+## API em Produção
+
+Para os que desejam conferir a API antes de realizar a instalação, fiz a publicação da mesma para o Heroku. Ela pode ser acessada através do endereço **[https://vuttr-richellyitalo.herokuapp.com/](https://vuttr-richellyitalo.herokuapp.com/)**
