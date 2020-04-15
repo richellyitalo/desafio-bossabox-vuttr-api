@@ -5,6 +5,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 class UserController {
+  '';
   async store(req, res) {
     const schema = Yup.object().shape({
       email: Yup.string().email().required(),
