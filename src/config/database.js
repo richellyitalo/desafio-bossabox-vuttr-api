@@ -29,7 +29,7 @@ module.exports = {
     },
   },
   test: {
-    dialect: process.env.TEST_DB_CONNECTION,
+    dialect: process.env.TEST_DB_CONNECTION || 'sqlite',
     host: process.env.TEST_DB_HOST,
     username: process.env.TEST_DB_USER,
     password: process.env.TEST_DB_PASS,
