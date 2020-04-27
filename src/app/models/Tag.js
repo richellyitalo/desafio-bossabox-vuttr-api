@@ -12,12 +12,6 @@ class Tag extends Model {
       }
     );
 
-    // this.addHook('beforeSave', async (tool) => {
-    //   if (tool.tags) {
-    //     user.password_hash = await bcrypt.hash(`${user.password}`, 8);
-    //   }
-    // });
-
     return this;
   }
 

@@ -7,13 +7,6 @@ class Tool extends Model {
         title: Sequelize.STRING,
         link: Sequelize.STRING,
         description: Sequelize.STRING,
-        // tags: {
-        //   type: Sequelize.STRING,
-        //   get(tags) {
-        //     const rawValue = this.getDataValue(tags);
-        //     return rawValue ? rawValue.split(',') : [];
-        //   },
-        // },
       },
       {
         sequelize,
@@ -21,11 +14,6 @@ class Tool extends Model {
       }
     );
 
-    // this.addHook('beforeSave', async (tool, options) => {
-    //   // if (tool.tags) {
-    //   //   user.password_hash = await bcrypt.hash(`${user.password}`, 8);
-    //   // }
-    // });
     return this;
   }
 
